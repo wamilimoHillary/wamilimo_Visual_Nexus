@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+        <!--  link to my Css  -->
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/responsive.css">
+     <!-- link to my- fnt family   -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap">
+    <!-- icon library-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--  welcoming introduction container-->
+<div class="intro-container">
+    <h1>Welcome to Wamilimo Gallery</h1>
+    <h3>Discover, Save, Enjoy.</h3>
+    <p>This is dr wamilimo hillarie a full stack Engineer!!.<br> Explore the curated collection and
+        save your favorite images by registering today. Start your journey Now!</p>
+</div>
+   <!--index about button-->
+ <a  class="index_abt_btn" href="about.html"><i class="fa fa-info"></i> About</a>
+
+<!--logins container box; containing the authentication buttons;transparent color-->
+<div class="logins">
+    <!--user-login button-->
+<button onclick="hide()" class="login-btn" ><i class="fa fa-user">Login</i></button>
+<img src="static/images/wami2.jpg" id="user-img"> <!--user-image-->
+    <p>Dont have an account!!</p>
+     <!--signup button-->
+<button onclick="hides()" class="signup-btn"><i class="fa fa-user">Sign up</i></button> <br>
+ <!--admin-login button-->
+     <button onclick="hide_admin_form()" class="admin-btn"><i class="fa fa-lock">-|| ADMIN</i></button>
+</div>
+
+     <!--user login form container-->
+    <div class="login-container"  id="login-container">
+        <h2>User Login</h2>
+        <!-- Wrong password/username error message -->
+            {% if error_message %}
+            <div class="error-message">
+                <p>{{ error_message }}</p>
+            </div>
+            {% endif %}
+         <!--user-login form-->
+        <form action="/login" method="post">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit"><i class="fa fa-key"></i>Login</button>
+        </form> <br>
+         <a href="reset_password.html" > Password Reset!!</a>
+    </div>
+<!--user signup form container-->
+<div class="signup-container" id="signup-container">
+    <h2>Sign Up</h2>
+    <!-- Error message for signup -->
+    {% if signup_error %}
+    <div class="error-message">
+        <p>{{ signup_error }}</p>
+    </div>
+    {% endif %}
+<!--user signup form-->
+    <form action="/signup" method="post">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<!--admin login container-->
+<div class="admin-container" id="admin-container">
+    <h2>Admin LOGIN</h2>
+    <!--admin login form cointainer-->
+    <form action="/admin" method="post">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit"><i class="fa fa-key"></i>Login</button>
+    </form>
+</div>
+
+
+ <!-- Error message for user login -->
+    {% if error_message %}
+    <div class="user-login-error-message">
+        <p>{{ error_message }}</p>
+    </div>
+   {% endif %}
+
+ <!-- Error message for signup -->
+    {% if signup_error %}
+    <div class="signup-error-message">
+        <p>{{ signup_error }} Sign-up again!!</p>
+    </div>
+    {% endif %}
+
+ <!--  message for signup success from boolean true -->
+{% if signup_success %}
+<div class="signup-success-message">
+    <p> Signup successful! Please log in.</p>
+</div>
+{% endif %}
+
+ <!-- Error message for admin login -->
+{% if admin_error_message %}
+<div class="admin-login-error-message">
+    <p>{{ admin_error_message}}</p>
+</div>
+{% endif %}
+
+<script>
+/*function to hide and display user login container*/
+function hide() {
+    let loginContainer = document.getElementById('login-container');
+    let loginButton = document.querySelector('.login-btn');
+
+    if (loginContainer.style.display === 'none' || loginContainer.style.display === '') {
+        loginContainer.style.display = 'block';
+        loginButton.innerHTML = '<i class="fa fa-times">Close</i> '; // Change text to 'Close'
+    } else {
+        loginContainer.style.display = 'none';
+        loginButton.innerHTML = '<i class="fa fa-user" >Login</i> '; // Change text back to 'Login'
+    }
+}
+/*function to hide and display user signup container*/
+function hides() {
+    let signUpContainer = document.getElementById('signup-container');
+    let signUpButton = document.querySelector('.signup-btn');
+
+    if (signUpContainer.style.display === 'none' || signUpContainer.style.display === '') {
+        signUpContainer.style.display = 'block';
+        signUpButton.innerHTML = '<i class="fa fa-times">Close sign up</i> '; // Change text to 'Close'
+    } else {
+        signUpContainer.style.display = 'none';
+        signUpButton.innerHTML = '<i class="fa fa-user">Sign Up</i> '; // Change text back to 'Sign Up'
+    }
+}
+/*function to hide and display admin login container*/
+function hide_admin_form(){
+let adminContainer = document.getElementById('admin-container');
+let adminButton= document.querySelector('.admin-btn');
+
+  if (adminContainer.style.display === 'none' || adminContainer.style.display === '') {
+        adminContainer.style.display = 'block';
+        adminButton.innerHTML = '<i class="fa fa-times">Close admin</i> '; // Change text to 'Close'
+    } else {
+        adminContainer.style.display = 'none';
+        adminButton.innerHTML = '<i class="fa fa-user">Admin</i> '; // Change text back to 'admin'
+    }
+}
+
+</script>
+
+
+</body>
+</html>

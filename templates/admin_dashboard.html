@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMIN DASHBOARD</title>
+
+    <style>
+        body{
+        background-color:wheat;
+        color:maroon;
+        text-align:center;
+        }
+
+        .addimg{
+        width:200px;
+        background-color:wheat;
+        padding:15px;
+        text-align:left;
+          color:maroon;
+          border:2px solid green;
+          border-radius:20px;
+        }
+        .addimg h2{
+                 color:maroon;
+        }
+
+        button{
+        background-color:green;padding:9px;border-radius:10px;color:white;text-decoration:none;border:none;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome  to Admin Dashboard</h1>
+
+<div style="margin:1%;background-color:maroon;color:white;padding:8px;width:fit-content;float:right;border-radius:25px">
+
+ <h3>Currently Logged  Admin: <br>{{ session['admin_name'] }}</h3>
+        <h4>    PLEASE LOGOUT</h4>
+    <a href="javascript:void(0);" onclick="confirmLogout()" style="border:2px solid green;background-color:red;margin:10%;color:white;padding:8px;text-decoration:none;border-radius:6px">Log Out</a>
+
+    <!-- Update your admin dashboard HTML to display active users -->
+</div>
+
+
+
+
+
+<div style="padding:1px 8px;margin:1%;background-color:white;color:maroon;width:fit-content;float:right; border-radius:25px"><h4>SYSTEM users</h4>
+    <h1>{{ user_count}}</h1>
+
+
+<a style="background-color:green;padding:9px;border-radius:10px;color:white;text-decoration:none" href="users.html">VIEW, DELETE USERS</a>
+</div>
+
+<div style="padding:1px 8px ;margin:1%;background-color:maroon;color:white;width:fit-content;float:right; border-radius:25px"><h2>Currently login in users</h2>
+    <h1>{{ user_count}}</h1>
+
+<a style="background-color:green;padding:9px;border-radius:10px;color:white;text-decoration:none" href="users.html">VIEW </a>
+</div>
+
+<div class="addimg">
+   <h2> ADD IMAGE</h2>
+<form action="/add_image" method="post">
+    <label for="table_name">Choose table:</label>
+    <select id="table_name" name="table_name">
+        <option value="foods">foods</option>
+        <option value="players">players</option>
+        <!-- Add options for other tables if needed -->
+    </select>
+    <br> <br>
+    <label for="name">Image Name & Extension:</label>
+    <input type="text" id="name" name="name" required>
+    <br> <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+    <br>
+    <button type="submit">Add Image</button>
+</form>
+        {% if added_success %}
+    <p style="color:green;">Image added successfully!</p>
+    {% endif %}
+</div>
+
+
+
+
+<div style="background-color:white;width:fit-content;position:relative;left:37%;padding:15px 1px;border-radius:25px">
+    <h2 style="color:white;background-color:maroon">View, || Delete images here</h2>
+       <a  style="background-color:green;padding:6px; border-radius:10px;color:white;text-decoration:none" href="foods_gallery.html">VIEW</a>
+
+</div>
+
+<script>
+  /*logout confirmation function.*/
+function confirmLogout() {
+        if (confirm("wamilimo asks are you sure you want to log out?")) {
+            window.location.href = "logout.html"; // Redirect to logout page if confirmed
+        }
+    }
+</script>
+
+
+</body>
+
+</html>

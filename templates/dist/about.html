@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About </title>
+    <!-- icon library-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+ body {
+        background-color:wheat;
+      }
+
+
+.home_links a ,.back_links a{
+color:white;
+font-size:x-large;
+position:relative;
+left:10%;
+background-color:rgb(255, 116, 9);;
+padding:5px;
+text-decoration:none;
+
+}
+
+
+/*container of details*/
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    text-align: center;
+   
+}
+
+/*details*/
+details{
+flex: 1;
+width:50%;
+
+border: 2px solid wheat;
+border-radius: 25px;
+margin: 3px;
+}
+
+/*summary of content when open*/
+details[open] summary{
+    background-color: rgb(255, 116, 9);;
+    color: maroon;
+    box-shadow: none;
+
+    border-radius: 25px 25px 0 0;
+}
+/*summary of content*/
+ summary{
+    box-shadow: -5px 5px 7px 2px rgb(255, 116, 9); ;
+    background-color:maroon;
+    color: #fff;
+    font-weight:bold ;
+    padding: 15px;
+    border-radius: 25px;
+ }
+
+
+ /* #remove marker
+summary::marker{
+    content: "";
+}
+*/
+
+/*content to be displayed*/
+.contents{
+    font-size: 1.5em;
+    color: #fff;;
+   padding: 8px;    
+   background-image:url('static/images/block1.jpg');
+}
+
+#contents{
+flex: 1;
+border-radius: 25px;
+margin:3px;
+}
+
+@media screen and (max-width: 767px){
+details{
+    flex:100%;
+}
+}
+
+
+    </style>
+</head>
+<body>
+<br>
+
+
+<div class="home_links">
+    <!-- Render home link if user is authenticated -->
+   {% if session.logged_in %}
+        <a href="{{ url_for('home') }}"><i class="fa fa-home"></i>Home</a>
+    {% endif %}
+</div>
+<br>
+
+<div class="back_links">
+    <!-- Add a "Back" link -->
+    <a href="{{ url_for('index') }}"><i class="fa fa-user"></i>Back to LogIn</a>
+</div>
+
+
+<br>
+<div class="container" >
+        <div class="contents" id="contents">
+            <h2>About Me</h2>
+            <p>I'm Master Wamilimo Hillarie, a full-stack engineer with expertise in HTML, 
+            CSS, JavaScript, and Python. I have years of experience in web development and networking,
+                working on a variety of projects ranging from small websites to large-scale applications.
+            I have a passion for creating clean and efficient code that delivers a seamless user experience.</p> 
+        </div>
+       
+            <div class="contents" id="contents" >
+                <h2>Contact me</h2>
+                <h1> <i class="fa fa-phone">0796981288 </i> </h1>
+            <h2><a style="color: white;" href="mailto:wamilimohillarie@gmail.com"><i class="fa fa-envelope"></i>Email me</a></h2>
+            </div>
+      
+</div>
+
+
+<div class="container">  
+    <details>
+        <summary>About Wamilimo Gallery</summary>
+           <div class="contents">
+            <p>Welcome to Wamilimo Gallery, your ultimate destination for discovering,
+                saving, and enjoying captivating visual content. As the founder and lead
+                developer, I, Master Wamilimo Hillary, am thrilled to introduce you to our
+                innovative image gallery platform. </p>
+         </div>
+        </details>
+    
+        <details>
+            <summary>My Mission and Vision</summary>
+               <div class="contents">
+                <p>Mission is to empower users to explore and appreciate
+                    the beauty of visual content from around the world.<hr> <br>
+                 Vision a platform where individuals can discover, curate, and share
+                 their favorite images, fostering creativity, inspiration, and connection in a vibrant online community.</p>
+             </div>
+        </details>
+    
+        <details>
+            <summary>My Message as a Founder</summary>
+               <div class="contents">
+                <p>As a passionate full-stack engineer I have deep appreciation for visual aesthetics,
+                    vision of providing users with a seamless and enriching experience in discovering 
+                    and engaging with high-quality images.
+                    Inspired by my love for technology and design, I envisioned a platform that would not only showcase
+                    stunning visuals but also serve as a hub for creativity and expression.</p>
+             </div>
+        </details>
+        </div>  
+
+<!-- ROW 2*-->
+        <div class="container">  
+            <details>
+                <summary>This Platform's History</summary>
+                   <div class="contents">
+                    <p>Since its inception, Wamilimo Gallery has evolved from a passion project into a thriving online community,
+                        attracting users from across the globe. With each milestone and achievement, i have remained
+                        committed to my mission of providing users with a dynamic and engaging platform for visual
+                        discovery and inspiration.</p>
+                 </div>
+                </details>
+            
+                <details>
+                    <summary>Community and Engagement</summary>
+                       <div class="contents">
+                        <p>At Wamilimo Gallery, we believe in the power of community and collaboration.
+                            Our platform serves as a vibrant hub where users can connect,
+                            share, and engage with like-minded individuals who share a passion for visual storytelling and creativity.
+                            Through community initiatives, events, and collaborations, we strive to foster a supportive and inclusive environment for all users..</p>
+                   </p>
+                     </div>
+                </details>
+            
+                <details>
+                    <summary>Skills Competence</summary>
+                       <div class="contents">
+                            <li>HTML5 </li>
+                            <li>CSS3</li>
+                            <li>JavaScript (50%)</li>
+                            <li>Python (Django, Flask Backend Frameworks)</li>
+                            <li>Version Control (Git)</li>
+                            <li>Hosting platform(GitHub)</li>
+                            <li>Database Management (MYSQL)</li>
+                            <li>Frontend Frameworks (React)</li>
+                             <li>Responsive Web Design</li>
+                             <li>secure and SEO</li>
+                         </div>
+                </details>
+                </div>
+
+
+                <div class="container">  
+                    <div class="contents" id="contents">
+                        I'm constantly learning and adapting to new technologies to stay up-to-date with the latest trends in web development. I'm dedicated to delivering high-quality solutions that meet the needs of clients and users.</p>
+                            <p>Feel free to get in touch with me if you have any questions or would like to collaborate on a project!</p>
+                           
+                    </div>            
+                 </div>
+
+     </body>
+</html>

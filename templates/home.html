@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/responsive.css">
+     <!-- icon library-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="static/script.js"> </script>
+    <title>Home</title>
+</head>
+<body>
+
+  <!--...........hearder................-->
+  <header>
+    <button id="nav-btn" onclick="toggle_nav()"><i class="fa fa-bars"></i></button>
+<nav  id="nav">
+    <a href="home.html"><i class="fa fa-home"></i> Home</a>
+    <a href="about.html"> <i class="fa fa-user"></i>About</a>
+
+    <a href=""> 
+      <div class="library_link"><i class="fa fa-folder"></i> Library 
+          <div class="hidden_links">
+            <a href="foods_gallery.html">Foods</a>
+            <a href="players_gallery.html">Players</a>
+            <a href="bibleverses.html">Fav Verses</a>
+            <a href="">My Photos</a>
+            <a href="">Friends</a>
+            <a href="">Family</a>
+            <a href="houses.html">Houses</a>
+
+           </div>
+      </div></a>
+
+    <a href="contact.html"> <i class="fa fa-phone"></i>Contact</a>
+    <a href="javascript:void(0);" onclick="confirmLogout()" class="library_link" >Log-Out</a>
+    </nav>
+
+
+<!--display the logged-in user info -->
+<div class="user-info">
+    {% if username %}
+    <i class="fa fa-user" id="user-icon"></i>
+        <p>USER NAME: <br> {{ username }}</p>
+    {% endif %}
+
+    <button type="button" onclick="display_update()" >Update</button>
+</div>
+
+        <!--......  Heading-->
+<div class="title">
+<h1>MASTER-WAMILIMO LIBRARY</h1>
+</div>
+
+<div class="introduction">
+  <h1>Designed by Comfort and relaxition</h1> <br> <hr>
+  <p><b>Find your favourite picture for yourself just by searching in the library collection || By Wamilimo</b></p>
+  </div>
+</header>
+
+  <!-- Update Form -->
+<div class="update-form" id="update-form">
+    <h2 style="color:white;background-color:green;">Update Details</h2>
+    <form action="/update" method="post">
+        <div class="input-group">
+            <label for="new_username">New Username:</label>
+            <input type="text" id="new_username" name="new_username" required>
+        </div>
+        <div class="input-group">
+            <label for="new_email">New Email:</label>
+            <input type="email" id="new_email" name="new_email" required>
+        </div>
+        <div class="input-group">
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+
+
+<!-- section 1.......-->
+
+    <section class="home_section" >
+
+        <h1>LIBRARY</h1> <br>
+        <!--ROW 1 Container-->
+    <div class="container">
+                 <!--column 1 items-->
+                <div class="items">
+              <a href="foods_gallery.html"><img src="static/images/f2.jpg" alt="" class="img"></a>
+                     <h2>FOODS</h2>
+                 </div>
+                 <!--column 2 items-->        
+                 <div class="items" id="football">
+               <a href="players_gallery.html"> <img src="static/images/fo1.jpg" alt="" class="img" style="opacity: 0;"></a>
+                     <h2>FOOTBALL</h2>
+                 </div>
+                <!--column 3 items-->
+                <div class="items">
+              <a href="bibleverses.html"><img src="static/images/lap4.jpg" alt="" class="img"></a>
+                     <h2>FAV Verse & Quote</h2>
+                </div>
+                <!--column 4 items-->
+                <div class="items">
+                <a href=""><img src="static/images/wami2.jpg" alt="" class="img"></a>
+                    <h2>MY PHOTOS</h2>
+                </div>
+    </div>
+         <!--ROW 1 Container-->    
+    <div class="container" style="margin-top: 40px;">
+            <!--column 4 items-->
+            <div class="items">
+              <a href="houses.html"><img src="static/images/block3.jpg" alt="" class="img"></a>
+                <h2>HOUSES</h2></div>
+                <!--column 4 items-->
+            <div class="items">
+              <a href=""><img src="static/images/f6.jpg" alt="" class="img"></a>
+                <h2>FAMILY</h2>
+            </div>
+            <!--column 4 items-->
+            <div class="items">
+              <a href=""><img src="static/images/basketball.png" alt="" class="img"></a>
+                <h2>FRIENDS</h2>
+            </div>
+    </div>
+
+</section>
+
+  <!-- .............SECTION 2............------>
+     <section class="home_section" >
+
+        <h1>LIBRARY</h1> <br>
+        <!--ROW 1 Container-->
+    <div class="container">
+                 <!--column 1 items-->
+                <div class="items">
+              <a href="foods_gallery.html"><img src="static/images/f2.jpg" alt="" class="img"></a>
+                     <h2>FOODS</h2>
+                 </div>
+                 <!--column 2 items-->
+                 <div class="items" id="football">
+               <a href="players_gallery.html"> <img src="static/images/fo1.jpg" alt="" class="img" style="opacity: 0;"></a>
+                     <h2>FOOTBALL</h2>
+                 </div>
+                <!--column 3 items-->
+                <div class="items">
+              <a href="bibleverses.html"><img src="static/images/lap4.jpg" alt="" class="img"></a>
+                     <h2>FAV Verse & Quote</h2>
+                </div>
+                <!--column 4 items-->
+                <div class="items">
+                <a href=""><img src="static/images/wami2.jpg" alt="" class="img"></a>
+                    <h2>MY PHOTOS</h2>
+                </div>
+    </div>
+         <!--ROW 1 Container-->
+    <div class="container" style="margin-top: 40px;">
+            <!--column 4 items-->
+            <div class="items">
+              <a href="houses.html"><img src="static/images/block3.jpg" alt="" class="img"></a>
+                <h2>HOUSES</h2></div>
+                <!--column 4 items-->
+            <div class="items">
+              <a href=""><img src="static/images/f6.jpg" alt="" class="img"></a>
+                <h2>FAMILY</h2>
+            </div>
+            <!--column 4 items-->
+            <div class="items">
+              <a href=""><img src="static/images/basketball.png" alt="" class="img"></a>
+                <h2>FRIENDS</h2>
+            </div>
+    </div>
+
+</section>
+
+
+   <script>
+  /* script to display update form*/
+function display_update() {
+    let updateForm = document.getElementById('update-form');
+    if (updateForm.style.display !== 'block') {
+        updateForm.style.display = 'block';  // Show form
+    } else {
+        updateForm.style.display = 'none';  // Hide form
+    }
+}
+
+function confirmLogout() {
+        if (confirm("Are you sure you want to log out?")) {
+            window.location.href = "logout.html"; // Redirect to logout page if confirmed
+        }
+    }
+</script>
+
+<footer>
+           <a href="home.html" style="color: #fff;"><i class="fa fa-home"></i> Home</a>
+  <marquee behavior="scroll" direction="left" scrollamount="8">
+  <p>&copy;copyright..all rights Reserved <br>Designed & implemented by Dr Wamilimo Hillary</p>
+  </marquee>
+</footer>
+</body>
+</html>

@@ -1,0 +1,253 @@
+
+/*STYLING THE HOME FILE*/
+*{
+    margin: 0;
+    padding:0;
+   
+}
+
+/*-------------header...................--*/
+header{
+    left: 0;
+    top: 0;
+    position: relative;
+    width: 100%;
+      height: 75vh;
+    background-image: url(images/block1.jpg);
+    background-position: 100% 100%;
+    background-size: cover;
+    animation:header_animate 5s ease-in-out 1.5s normal infinite;
+}
+
+@keyframes header_animate{
+    0%{ background-image: url(images/block1.jpg);background-position:100% 100%;}
+   35%{ background-image: url(images/f1.jpg); background-position:10% 100%;}
+   50%{ background-image: url(images/p3.png);background-position:100% 10% ;}
+   75%{ background-image: url(images/fo1.jpg);background-position: 50% 10%  ;}
+   100%{ background-image: url(images/CAR1.png);background-position: 100% 100%  ;}
+}
+
+/*............nav  row .......*/
+nav{
+    display: flex;
+    list-style: none;
+    float: right;
+    margin:20px 20px 0 0;
+    padding: 10px;
+    justify-content: space-between;
+    font-size: large;
+    font-style: bold;
+}
+
+/*......navigation links*/
+nav a{
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-size: 30px;
+}
+
+/*......navigation links on hover*/
+ nav a:hover{
+    color:#fff;
+    text-shadow: 1px 1px 0 #fd6d25, 2px 2px 0  #fd6d25;
+}
+/*......MENU button*/
+#nav-btn{
+    width: fit-content;
+    padding: 5px 10px;
+    margin: 10px auto auto 20px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: xx-large;
+}
+
+/*......dropdown div home page..............*/
+.library_link {
+    position: relative;
+    display:block;
+    background-color:  rgb(255, 116, 9);
+    width:fit-content;
+    color: #fff;
+    
+  
+  }
+
+  /*......navigation links the hidden ones*/
+  .hidden_links{
+    display:none;
+    background-color:rgb(138, 26, 3);
+    position:absolute;
+    width: 100%;
+    height:fit-content;
+    box-shadow: 5px 15px 16px 0px  rgb(255, 116, 9);
+    z-index: 1;  
+   
+  }
+
+  /*.....when hover on library..... */
+  .library_link:hover .hidden_links{
+  display: block;
+    }
+
+/*.....when hover on library links..... */
+  .library_link:hover .hidden_links a{
+    display: block;
+    color: #fff;
+    font-size:larger;
+    }
+
+/*.....user information box....*/
+.user-info{
+background-color:wheat;
+color:maroon;
+width:fit-content;
+margin-left:3%;
+text-align:center;
+padding:5px;
+}
+
+/*.....user information box ICON....*/
+#user-icon{
+font-size:50px;
+}
+
+/*.....user information UPDATE FORM....*/
+.update-form{
+background-color: maroon;
+    padding: 30px;
+    border-radius: 10px;
+    top:30%;
+    left:5%;
+    position:absolute;
+    display:none;
+}
+
+/*.....user information UPDATE FORM ID....*/
+#update-form{
+    display:none;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color:white;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+button {
+    width: 100%;
+    padding: 7px;
+    background-color: green;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index:1;
+    box-shadow:1px 2px 5px 2px wheat ;
+
+}
+
+button:hover {
+    background-color: green;
+    opacity:0.5;
+}
+
+
+/*.....HOME TITLE....*/
+.title{
+    color:#fff;
+   position: relative;
+left:20%;
+top: 1%;
+width: fit-content;
+font-size: x-large;
+text-align: center;
+text-shadow: 1px 1px rgb(138, 26, 3), 2px 2px rgb(138,26, 3), 3px 3px  rgb(138, 26, 3);
+}
+
+/*.....HOME introduction text....*/
+.introduction {
+color:#fff;
+position: relative;
+left:30%;
+top: 1%;
+width: 20%;
+padding: 10px;
+}
+
+
+/*..... SECTION....*/
+section{
+    text-align: center;
+    background-image:radial-gradient( circle, wheat 70%,maroon 2%, wheat);
+    color: brown;
+    padding: 5px;
+   }
+
+/* ----------------row container HOME--------*/
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto 20px ;
+}
+
+/*--------------------columns--------------*/
+.items{
+    width: 20%;
+    flex-grow: 1;
+    flex-basis: 200;
+    padding: 0;
+    color:maroon;
+      text-align: justify;
+    margin:10px 30px;
+    border-radius: 20px 20px 0 0;
+    background-color: wheat;
+     }
+
+/*THE  LIBRARY IMAGES */
+.img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+   }
+
+/*FOOTBALL COLUMN ANIMATED*/
+#football{
+    background-position: 40% 40%;
+    background-size: cover;
+    animation:football_animate 7s ease-in-out 0s normal infinite;
+}
+
+@keyframes football_animate{
+    0%{ background-image: url(images/fo16.jpg)}
+   35%{ background-image: url(images/fo14.jpg)}
+   50%{ background-image: url(images/fo23.jpg)}
+   75%{ background-image: url(images/fo20.jpg)}
+   100%{ background-image: url(images/fo7.jpg)}
+}
+
+
+/*.............FOOTER...........*/
+footer{
+    text-align: center;
+    background-color: maroon;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 5px 1px;
+    color: #fff;
+    font-weight: bolder;
+    }

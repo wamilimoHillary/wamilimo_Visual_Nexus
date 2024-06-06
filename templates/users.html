@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+  <style>
+  body{
+    background-color:wheat;
+    color:maroon;
+    text-align:center;
+    }
+
+    table {
+             border-collapse:collapse;
+              width: 100%;
+             }
+                     th {
+                        background-color: maroon;
+                        color:white;
+                        border: 1px solid #fff;
+                        padding: 8px;
+                    }
+                     td {
+                        border: 1px solid maroon;
+                        padding: 3px;
+                        text-align: center;
+                    }
+
+                    .back-btn{
+                   background-color:maroon;
+                   margin:10%;
+                   color:white;
+                   padding:8px;
+                   text-decoration:none;
+                   border-radius:6px;
+                    }
+
+                    .delete_user{
+                    color:white;
+                    background-color:green;
+                    border-radius:5px;
+                    padding:3px 10px;
+                    border:none;
+                    }
+
+                      .delete_user:hover{
+                    color:white;
+                    background-color:red;
+
+                    }
+  </style>
+</head>
+<body>
+<br> <br>
+<a href="/admin.html" class="back-btn">Back</a>
+
+<h1>THIS ARE YOUR USERS IN THE SYSTEM</h1>
+
+ <table border="1">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>user password</th>
+                <th>Delete Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+                <td>{{user[3] }}</td>
+
+                <!--delete button form-->
+                <td> <form method="POST" action="/delete_user">
+                        <input type="hidden" name="user_id" value="{{ user[0] }}">
+                        <button  CLASS="delete_user"  type="submit">Delete</button>
+                    </form> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

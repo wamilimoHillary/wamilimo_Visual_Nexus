@@ -1,0 +1,179 @@
+
+/*STYLING THE INDEX PAGE*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 3px;
+    height:110vh;
+    background-color: wheat;
+    background-image:url('images/pool.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:100% 100%;
+      }
+
+/* welcoming introduction container */
+.intro-container{
+color:white;
+width:50px
+height:50px;
+margin:20px;
+position:relative;
+left:0;
+text-align:center;
+}
+
+.intro-container p{
+font-family: 'Lobster', cursive;
+}
+
+/* logins container box; containing the authentication buttons;transparent color */
+.logins{
+width:fit-content;
+left:35%;
+position:relative;
+margin-top:2%;
+border-radius:7px;
+box-shadow:2px 2px 10px 5px wheat inset;
+background-image:radial-gradient(circle, maroon 60%, transparent 2%);
+padding:5px 25px;
+
+}
+
+/*rotating image*/
+#user-img{
+width:150px;
+ height:140px;
+ border-radius:50%;
+ z-index:1;
+ margin:10% 10px auto auto;
+ animation:user_img_animate 5s ease-out 2s normal infinite;
+}
+
+/*rotate the user image*/
+@keyframes user_img_animate{
+        0%{ transform: rotateY(0deg);}
+        100%{ transform: rotateY(360deg);}
+           }
+
+.logins p{
+color:white;
+text-align:center;
+}
+
+/*user login form container,<!--user signup form container,..<!--admin login container-->*/
+.login-container,.signup-container,.admin-container {
+    background-color: maroon;
+    padding: 30px;
+    border-radius: 10px;
+    top:30%;
+    left:10%;
+    display:none;
+    position:absolute;
+    }
+
+/*user login form container links*/
+.login-container a{
+color:white;
+}
+
+h2 {
+    text-align: center;
+    color:white
+}
+
+/*input-group div*/
+.input-group {
+    margin-bottom: 20px;
+  }
+
+/*label style*/
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color:white;
+}
+
+/*input*/
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid green;
+    border-radius: 25px;
+}
+
+/*---buttons----*/
+button {
+    width: 100%;
+    padding: 7px;
+    background-color: green;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index:1;
+    box-shadow:1px 2px 5px 2px wheat ;
+
+}
+
+/* index about button */
+.index_abt_btn{
+background-color:maroon;
+position:relative;
+left:35%;
+ padding:8px;color:white;
+ text-decoration:none;
+ font-size:x-large;
+}
+
+button:hover {
+      opacity:0.4;
+}
+
+/*login-button*/
+.login-btn{
+width:fit-content;
+z-index:1;
+background-color:green;
+position:relative;
+top:-40px;
+margin:20px;
+border-radius:25px;
+padding:10px;
+}
+
+/*signup-button*/
+.signup-btn{
+background-color:maroon;
+margin-bottom:2px;
+}
+
+/*icon font size*/
+.login-btn,.signup-btn,.admin-btn i{
+font-size:20px;
+}
+
+/*error-message in form*/
+.error-message{
+background-color:wheat;
+color:red;
+}
+
+.signup-success-message,.user-login-error-message,.signup-error-message,.admin-login-error-message{
+color:white;
+background-color:red;
+position:relative;
+width:fit-content;
+margin:2px 38%;
+top:-10px;
+border-radius:10px;
+}
+
+.signup-success-message{
+background-color:green;
+}
+
+.signup-success-message p,.user-login-error-message p,.signup-error-message p,.admin-login-error-message p{
+padding:6px;
+}
+

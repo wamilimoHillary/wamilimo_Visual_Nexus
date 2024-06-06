@@ -1,0 +1,29 @@
+/* Add your styling here */
+/* Example styles for header elements */
+header {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.cv-section img {
+    width: 80px;
+    height: 80px;
+}
+
+.intro-text .hidden {
+    display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    /* Example: hide the navigation links or stack them vertically */
+    nav ul {
+        display: none;
+    }
+}

@@ -1,0 +1,175 @@
+  
+    
+@media screen and (max-width:767px) {
+ *{
+    margin: 0;
+    padding: 0;
+  }
+
+/*ITEMS COLUMN IN HOME PAGE*/
+    .items{
+        width: 35%;
+        color: maroon;
+       font-size:small;
+       margin: 15px;
+    }
+
+    /* Header*/
+    header{
+        height: fit-content;
+        position: relative;
+        left:0;
+        right: 0;
+     }
+
+/*........nav..............*/
+       nav{
+       flex-direction:column;
+    float:none;
+     top: 8%;
+     left:10px;
+     position: absolute;
+     width: fit-content;
+     padding: 0;
+     visibility: hidden;
+     z-index: 1;
+     height: 70%;
+     background-image: url(images/block1.jpg);
+          }
+
+        nav a{
+        margin-top:15px;
+        color: #fff;
+        
+       }
+    
+     /*.....HOME TITLE....*/
+    .title, .introduction{
+        font-size: small;
+        left:22%;
+        width: 60%;
+    }
+
+ /*.........home section*/
+    .home_section{
+        color:#fff;
+        background-image:radial-gradient( circle, wheat 70%,maroon 2%);
+    }
+
+    .container{
+        box-shadow: 8px 4px 5px wheat inset;
+        margin: 0px 0px ;
+            }
+/*
+            .item{
+                width:50%;
+                flex:50%;
+            }
+*/
+
+            #football{
+                height: 250px;
+              
+            }
+
+            footer{
+               padding: 1px; 
+
+            }
+
+/*------------------INDEX PAGE--------------------*/
+/* logins container box; containing the authentication buttons;transparent color */
+.logins{
+    left:2%;
+    position:relative;
+    margin:5%;
+    border-radius:7px;
+    top:20%;
+}
+
+/*user login form container,user signup form container,admin login container*/
+.signup-container,.login-container,.admin-container{
+ padding:5px 23px 5px 10px;
+    border-radius: 10px;
+    top:3%;
+   width:70%;
+   margin:4%;
+   left:2%;
+}
+
+/*user login form container*/
+.login-container {
+top:10%;
+       }
+
+ /*  welcoming introduction container*/
+.intro-container{
+font-size:smaller;
+}
+
+#user-img{
+    width:40%;
+     height:auto;
+     border-radius:50%;
+     z-index:1;
+     margin:10% 10px auto auto;
+}
+
+/*login button*/
+.login-btn{
+margin-left:5px;
+}
+
+/*error message*/
+.signup-success-message,.user-login-error-message,.signup-error-message,.admin-login-error-message{
+margin:10% 6%;
+left:0;
+top:16%;
+border:1px solid wheat;
+}
+
+
+/*-----------------GALLERY PAGE--------------------------------------*/
+
+    .image-item {
+        flex-basis: calc(50% - 10px); /* 50% width with margin */
+        max-width: calc(50% - 10px); /* 50% width with margin */
+    }
+
+    .image-item.zoomed img {
+        max-width: 90vw; /* Adjust the max width for smaller screens */
+        max-height: 90vh; /* Adjust the max height for smaller screens */
+        top: 50%;
+        left: 50%;
+        transform: translate(-25%, -25%);
+        position: absolute;
+    }
+
+/*for ZOOM IMAGE SIZE*/
+    .zoomed {
+        transform: scale(1);
+
+    }
+
+    /* Adjust positioning for zoomed images in the second column */
+    .image-item.zoomed:nth-child(even) img {
+        left: auto;
+        right: 50%;
+        transform: translate(25%, -50%);
+    }
+}
+
+
+/* Media Query for screen sizes up to 991px */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .image-item {
+        flex-basis: calc(33.333% - 4px); /* 33.333% width with margin */
+        max-width: calc(33.333% - 4px); /* 33.333% width with margin */
+    }
+
+    .signup-container,.login-container,.admin-container{
+    top:65%;
+    left:25%;
+   width:40%;
+}
+}
